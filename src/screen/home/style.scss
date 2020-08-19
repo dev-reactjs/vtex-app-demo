@@ -1,0 +1,101 @@
+.banner {
+    width: 100%;
+    max-height: 300px;
+    img {
+        width: 100%;
+        height: -webkit-fill-available;
+        object-fit: cover;
+    }
+}
+.content {
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    .row {
+        float: left;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 35px;
+        width: 100%;
+        .space {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .vtex-dropdown__label {
+            display: none;
+        }
+        .vtex-dropdown__arrow svg {
+            display: none;
+        }
+        .vtex-input-prefix__group {
+            input {
+                margin-top: 10px;
+                height: 30px;
+                width: 223px;
+            }
+        }
+        .vtex-dropdown__container {
+            select {
+                margin-top: 10px;
+                height: 32px;
+                width: 223px;
+            }
+        }
+        .vtex-checkbox__box-wrapper {
+            display: inline-flex;
+        }
+        .vtex-checkbox__container {
+            display: inline;
+        }
+        .mv5 {
+            display: flex;
+            margin-top: 14px;
+        }
+        .vtex__icon-check {
+            display: none;
+        }
+        .vtex-checkbox__line-container {
+            margin-right: 20px;
+        }
+        .vtex-button {
+            background-color: #1da0f2;
+            color: #fff;
+            border-radius: 14px;
+            height: fit-content;
+            padding: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            outline: none;
+            border: none;
+            margin-left: 30px;
+        }
+    }
+    .item-list {
+        float: left;
+        display: inline-flex;
+        margin-top: 30px;
+        width: -webkit-fill-available;
+        .item {
+            width: 370px;
+            margin-left: 10px;
+            margin-right: 10px;
+            .category-wrap {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .item-image {
+                width: 100%;
+                height: 100px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .item-data {
+                padding: 15px;
+            }
+        }
+    }
+}
