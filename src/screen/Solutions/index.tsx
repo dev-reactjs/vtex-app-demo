@@ -4,12 +4,18 @@ import Box from "@vtex/styleguide/lib/Box";
 import Card from "@vtex/styleguide/lib/Card";
 
 import {
-  FeatureData, SubTile, ManagementTile, RegistrationSteps, ContestSteps
+  FeatureData, SubTile, ManagementTile, RegistrationSteps, ContestSteps, HEADER_LINKS
 } from "./data";
 import "./style.scss";
 import { mobile_lock, mobile_app, contract } from "../../assets";
+import Header from "../../component/header";
+import { routeHistory } from "../../types";
 
-function HighLight(props: any) {
+type Props = {
+  history: routeHistory
+}
+
+function HighLight(props: { children: React.ReactNode }) {
   return (
     <div className="bg-muted-5 pa8">
       <Box title="">
@@ -21,7 +27,7 @@ function HighLight(props: any) {
   );
 }
 
-function FeatureCard(props: any) {
+function FeatureCard(props: { children: React.ReactNode }) {
   return (
     <Card>
       <div className="card-style">{props.children}</div>
@@ -29,9 +35,14 @@ function FeatureCard(props: any) {
   );
 }
 
-function App() {
+function App(props: Props) {
+  const { history } = props;
   return (
     <Layout>
+      <Header
+          history={history}
+          links={HEADER_LINKS}
+      />
       <div className="banner">
         <div className="banner-text-wrap">
           <h1 className="banner-heading">Changing the way contests run</h1>

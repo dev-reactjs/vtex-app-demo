@@ -6,13 +6,19 @@ import Filters from "./filters";
 import SearchResult from "./searchResult";
 import Header from "../../component/header";
 import Footer from "../../component/footer";
-import { OPTIONS } from "./data";
+import { OPTIONS, HEADER_LINKS } from "./data";
 import { routeHistory } from "../../types";
 import "./style.scss";
 
 type State = {
     additionalOptions: Object,
     type: string,
+    location: string,
+    filters: {
+        additionalOptions: Object,
+        type: string,
+        location: string,
+    }
 }
 
 type Props = {
@@ -23,6 +29,12 @@ class Home extends Component<Props, State> {
     state = {
         additionalOptions: OPTIONS,
         type: "",
+        location: "",
+        filters: {
+            additionalOptions: {},
+            type: "",
+            location: "",
+        }
     }
 
     updateFilters = (e: any, field: string) => {
@@ -31,15 +43,28 @@ class Home extends Component<Props, State> {
         this.setState(newState);
     }
 
+    applyFilters = () => {
+        const { additionalOptions, type, location } = this.state;
+        this.setState({
+            filters: { additionalOptions, type, location }
+        });
+    }
+
+    resetFilters = () => {
+        this.setState({
+            filters: { additionalOptions: {}, type: "", location: "" },
+            additionalOptions: OPTIONS, type: "", location: ""
+        });
+    }
+
     render() {
-        const { additionalOptions, type } = this.state;
+        const { additionalOptions, type, filters, location } = this.state;
         const { history } = this.props;
         return (
             <Layout>
                 <Header
                     history={history}
-                    label="Employees"
-                    route="/users"
+                    links={HEADER_LINKS}
                 />
                 <div className="home-banner">
                     <img src={explore} alt="explore" />
@@ -49,10 +74,13 @@ class Home extends Component<Props, State> {
                         updateFilters={this.updateFilters}
                         additionalOptions={additionalOptions}
                         type={type}
+                        location={location}
+                        applyFilters={this.applyFilters}
+                        resetFilters={this.resetFilters}
                     />
-                    <SearchResult />
+                    <SearchResult filters={filters} />
                 </div>
-                <Footer history={history} />
+                <Footer />
             </Layout>
         );
     }

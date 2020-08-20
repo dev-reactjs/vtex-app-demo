@@ -3,28 +3,30 @@ import Button from "@vtex/styleguide/lib/Button";
 
 import { routeHistory } from "../../types";
 
-type Props = {
-    history: routeHistory,
+type linkType = {
     label: string,
     route: string,
 }
 
+type Props = {
+    history: routeHistory,
+    links: Array<linkType>
+}
+
 function Header(props: Props) {
-    const { label, route, history } = props;
+    const { links, history } = props;
     return (
         <div className="header">
             <span className="logo">ONGRAPH</span>
             <div className="head-links">
-                <Button
-                    onClick={() => history.push(route)}
-                >
-                    {label}
-                </Button>
-                <Button
-                    onClick={() => history.push("/solutions")}
-                >
-                    Solutions
-                </Button>
+                {links && links.map((data: linkType) => (
+                    <Button
+                        key={data.label}
+                        onClick={() => history.push(data.route)}
+                    >
+                        {data.label}
+                    </Button>
+                ))}
             </div>
         </div>
     );

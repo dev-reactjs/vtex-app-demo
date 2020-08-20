@@ -8,7 +8,7 @@ import Header from "../../component/header";
 import Footer from "../../component/footer";
 import { fetchUsers } from "../../model/users/actions";
 import "./style.scss";
-import { DefaultUserSchema } from "./data";
+import { DefaultUserSchema, HEADER_LINKS } from "./data";
 import { storeType, routeHistory } from "../../types";
 
 type Props = {
@@ -33,8 +33,7 @@ class Users extends Component<Props> {
             <Layout>
                 <Header
                     history={history}
-                    label="Home"
-                    route="/"
+                    links={HEADER_LINKS}
                 />
                 <div className="home-banner">
                     <img src={explore} alt="explore" />
@@ -53,7 +52,7 @@ class Users extends Component<Props> {
                         loading={loading}
                     />
                 </div>
-                <Footer history={history} />
+                <Footer />
             </Layout>
         );
     }

@@ -8,16 +8,23 @@ import { TYPE_OPTIONS } from "./data";
 
 type Props = {
     updateFilters: Function,
+    applyFilters: Function,
+    resetFilters: Function,
     additionalOptions: Object,
     type: string,
+    location: string
 }
 
 function Filters(props: Props) {
-    const { updateFilters, additionalOptions, type } = props;
+    const {
+        updateFilters, additionalOptions, type,
+        applyFilters, resetFilters, location
+    } = props;
     return (
         <div className="row">
             <Input
                 label="Location"
+                value={location}
                 placeholder="Enter Your Location"
                 onChange={(e: string) => updateFilters(e, "location")}
             />
@@ -40,7 +47,12 @@ function Filters(props: Props) {
                     newCheckedMap, "additionalOptions"
                 )}
             />
-            <Button>Search</Button>
+            <Button
+                onClick={() => applyFilters()}
+            >Search</Button>
+            <Button
+                onClick={() => resetFilters()}
+            >Reset</Button>
         </div>
     );
 }

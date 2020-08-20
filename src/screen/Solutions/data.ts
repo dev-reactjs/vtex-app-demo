@@ -22,5 +22,10 @@ export const ContestSteps = [
   "Recruit judges/mentors and evaluate their applications"
 ]
 
+export const HEADER_LINKS = [
+  { label: "Home", route: "/" },
+  { label: "Employees", route: "/users" },
+];
+
 export const SubTile = "Running a contest is hard. We can help make it simple and save you time, while offering the best experience for your participants.";
 export const ManagementTile = "We are all about saving you money and time, while allowing you to offer your participants the best experience possible.";

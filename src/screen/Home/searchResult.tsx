@@ -3,6 +3,7 @@ import Card from "@vtex/styleguide/lib/Card";
 
 import { sample } from "../../assets";
 import { ITEMS } from "./data";
+import { filterData } from "./utils";
 
 type ITEM = {
     id: number,
@@ -14,11 +15,24 @@ type ITEM = {
     detail: string,
 }
 
-function SearchResult() {
+type filterType = {
+    additionalOptions: Object,
+    type: string,
+    location: string,
+}
+
+type Props = {
+    filters: filterType
+}
+
+function SearchResult(props: Props) {
+    const { filters } = props;
+    const DATA = filterData(filters, ITEMS);
     return (
         <div className="search-result-wrap">
             <div className="item-list">
-                {ITEMS.map((item: ITEM) => {
+                {DATA.length ?
+                DATA.map((item: ITEM) => {
                     const { id, location, name, type, category, scheduleOf, detail } = item;
                     return (
                         <div className="item" key={id}>
@@ -39,7 +53,11 @@ function SearchResult() {
                             </Card>
                         </div>
                     )
-                })}
+                }) : (
+                    <div className="item">
+                        <Card><span>No item found for applied filter</span></Card>
+                    </div>)
+                }
             </div>
         </div>
     );

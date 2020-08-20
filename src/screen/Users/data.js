@@ -28,3 +28,8 @@ export const DefaultUserSchema = {
     },
   },
 };
+
+export const HEADER_LINKS = [
+  { label: "Home", route: "/" },
+  { label: "Solutions", route: "/solutions" },
+];
