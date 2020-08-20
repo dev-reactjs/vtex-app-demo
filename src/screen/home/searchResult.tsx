@@ -4,9 +4,6 @@ import Card from "@vtex/styleguide/lib/Card";
 import { sample } from "../../assets";
 import { ITEMS } from "./data";
 
-type Props = {
-}
-
 type ITEM = {
     id: number,
     location: string,
@@ -17,7 +14,7 @@ type ITEM = {
     detail: string,
 }
 
-function SearchResult(props: Props) {
+function SearchResult() {
     return (
         <div className="search-result-wrap">
             <div className="item-list">

@@ -4,6 +4,7 @@ import Layout from "@vtex/styleguide/lib/Layout";
 import { explore } from '../../assets';
 import Filters from './filters';
 import SearchResult from './searchResult';
+import Header from '../../component/header';
 import { OPTIONS } from './data';
 import "./style.scss";
 
@@ -26,6 +27,7 @@ class Home extends Component<{}, State> {
         const { additionalOptions } = this.state;
         return (
             <Layout>
+                <Header />
                 <div className="home-banner">
                     <img src={explore} alt="explore" />
                 </div>
