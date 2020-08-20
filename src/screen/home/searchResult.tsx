@@ -24,8 +24,8 @@ function SearchResult(props: Props) {
                 {ITEMS.map((item: ITEM) => {
                     const { id, location, name, type, category, scheduleOf, detail } = item;
                     return (
-                        <div className="item">
-                            <Card key={id}>
+                        <div className="item" key={id}>
+                            <Card>
                                 <div className="item-image">
                                     <img src={sample} alt="explore" />
                                 </div>

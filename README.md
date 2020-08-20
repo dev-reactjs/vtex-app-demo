@@ -1,6 +1,6 @@
 ## Tech Specs
 
-React Js, TypeScript
+React Js, TypeScript, SCSS
 
 ## Available Scripts
 

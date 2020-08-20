@@ -26,7 +26,7 @@ class Home extends Component<{}, State> {
         const { additionalOptions } = this.state;
         return (
             <Layout>
-                <div className="banner">
+                <div className="home-banner">
                     <img src={explore} alt="explore" />
                 </div>
                 <div className="content">
