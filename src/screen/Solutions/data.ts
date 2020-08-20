@@ -3,9 +3,9 @@ import {
 } from "../../assets";
 
 export const FeatureData = [
-  {image: trophy, description: "Make a team and win more"},
-  {image: search, description: "Make a team and win more"},
-  {image: download, description: "Make a team and win more"}
+  { image: trophy, description: "Make a team and win more" },
+  { image: search, description: "Make a team and win more" },
+  { image: download, description: "Make a team and win more" }
 ];
 
 export const RegistrationSteps = [

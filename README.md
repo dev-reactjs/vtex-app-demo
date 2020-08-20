@@ -1,6 +1,6 @@
 ## Tech Specs
 
-Vtex Components, React Js, TypeScript, SCSS, Axios, React Router Redux, Redux Thunk
+Vtex Components, React Js, TypeScript, SCSS, ES Lint, Axios, React Router Redux, Redux Thunk
 
 ## Available Scripts
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Input from "@vtex/styleguide/lib/Input";
 import Dropdown from "@vtex/styleguide/lib/Dropdown";
 import CheckboxGroup from "@vtex/styleguide/lib/CheckboxGroup";

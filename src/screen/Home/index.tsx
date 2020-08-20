@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Layout from "@vtex/styleguide/lib/Layout";
 
-import { explore } from '../../assets';
-import Filters from './filters';
-import SearchResult from './searchResult';
-import Header from '../../component/header';
-import Footer from '../../component/footer';
-import { OPTIONS } from './data';
+import { explore } from "../../assets";
+import Filters from "./filters";
+import SearchResult from "./searchResult";
+import Header from "../../component/header";
+import Footer from "../../component/footer";
+import { OPTIONS } from "./data";
 import { routeHistory } from "../../types";
 import "./style.scss";
 

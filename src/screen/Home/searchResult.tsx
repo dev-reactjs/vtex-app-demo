@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Card from "@vtex/styleguide/lib/Card";
 
 import { sample } from "../../assets";

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Table from '@vtex/styleguide/lib/Table'
+import React, { Component } from "react";
+import Table from "@vtex/styleguide/lib/Table"
 import Layout from "@vtex/styleguide/lib/Layout";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { explore } from '../../assets';
-import Header from '../../component/header';
-import Footer from '../../component/footer';
-import { fetchUsers } from '../../model/users/actions';
+import { explore } from "../../assets";
+import Header from "../../component/header";
+import Footer from "../../component/footer";
+import { fetchUsers } from "../../model/users/actions";
 import "./style.scss";
-import { DefaultUserSchema } from './data';
+import { DefaultUserSchema } from "./data";
 import { storeType, routeHistory } from "../../types";
 
 type Props = {
@@ -44,7 +44,7 @@ class Users extends Component<Props> {
                         schema={DefaultUserSchema}
                         items={users}
                         density="high"
-                        onRowClick={() => {}}
+                        onRowClick={() => { }}
                         containerHeight={400}
                         loading={loading}
                     />
@@ -56,15 +56,15 @@ class Users extends Component<Props> {
 }
 
 const mapStateToProps = (store: storeType) => {
-    return({
-      usersReducer: store.usersReducer,
+    return ({
+        usersReducer: store.usersReducer,
     })
 };
 
 const mapDispatchToProps = (dispatch: Function) => {
-  return {
-    fetchUsers: () => {dispatch(fetchUsers());},
-  };
+    return {
+        fetchUsers: () => { dispatch(fetchUsers()); },
+    };
 };
 
 export default connect(

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Link from "@vtex/styleguide/lib/Link";
 import Button from "@vtex/styleguide/lib/Button";
 
@@ -11,7 +11,7 @@ type Props = {
 function Footer(props: Props) {
     const { history } = props;
     const openList = () => {
-        if(history) {
+        if (history) {
             history.push("users");
         }
     }
