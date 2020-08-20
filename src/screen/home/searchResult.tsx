@@ -19,7 +19,7 @@ type ITEM = {
 
 function SearchResult(props: Props) {
     return (
-        <div>
+        <div className="search-result-wrap">
             <div className="item-list">
                 {ITEMS.map((item: ITEM) => {
                     const { id, location, name, type, category, scheduleOf, detail } = item;
@@ -37,7 +37,7 @@ function SearchResult(props: Props) {
                                         <span>{category}</span>
                                         <span>{scheduleOf}</span>
                                     </div>
-                                    <span>{detail}</span>
+                                    <p>{detail}</p>
                                 </div>
                             </Card>
                         </div>
