@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "@vtex/styleguide/lib/Link";
 import Button from "@vtex/styleguide/lib/Button";
 
 import { routeHistory } from "../../types";
@@ -16,12 +15,11 @@ function Header(props: Props) {
         <div className="header">
             <span className="logo">ONGRAPH</span>
             <div className="head-links">
-                <Link
-                    href={route}
-                    mediumWeigth
+                <Button
+                    onClick={() => history.push(route)}
                 >
                     {label}
-                </Link>
+                </Button>
                 <Button
                     onClick={() => history.push("/solutions")}
                 >
