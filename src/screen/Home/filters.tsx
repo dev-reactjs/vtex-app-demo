@@ -47,12 +47,8 @@ function Filters(props: Props) {
                     newCheckedMap, "additionalOptions"
                 )}
             />
-            <Button
-                onClick={() => applyFilters()}
-            >Search</Button>
-            <Button
-                onClick={() => resetFilters()}
-            >Reset</Button>
+            <Button onClick={() => applyFilters()}>Search</Button>
+            <Button onClick={() => resetFilters()}>Reset</Button>
         </div>
     );
 }

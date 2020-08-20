@@ -37,7 +37,10 @@ class Home extends Component<Props, State> {
         }
     }
 
-    updateFilters = (e: any, field: string) => {
+    updateFilters = (
+        e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>,
+        field: string
+    ) => {
         const VALUE = (field === "additionalOptions") ? e : e.target.value;
         const newState = { ...this.state, [field]: VALUE };
         this.setState(newState);
@@ -62,10 +65,7 @@ class Home extends Component<Props, State> {
         const { history } = this.props;
         return (
             <Layout>
-                <Header
-                    history={history}
-                    links={HEADER_LINKS}
-                />
+                <Header history={history} links={HEADER_LINKS} />
                 <div className="home-banner">
                     <img src={explore} alt="explore" />
                 </div>
