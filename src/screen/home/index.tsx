@@ -5,6 +5,7 @@ import { explore } from '../../assets';
 import Filters from './filters';
 import SearchResult from './searchResult';
 import Header from '../../component/header';
+import Footer from '../../component/footer';
 import { OPTIONS } from './data';
 import "./style.scss";
 
@@ -38,6 +39,7 @@ class Home extends Component<{}, State> {
                     />
                     <SearchResult />
                 </div>
+                <Footer />
             </Layout>
         );
     }

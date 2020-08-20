@@ -17,7 +17,7 @@ export const RegistrationSteps = [
 
 export const ContestSteps = [
   "Increase participation with a dedicated contest profile",
-  "asily manage deadlines and requirements for registration",
+  "Easily manage deadlines and requirements for registration",
   "Quickly view live analytics of registrants and their profiles",
   "Recruit judges/mentors and evaluate their applications"
 ]
