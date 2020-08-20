@@ -7,15 +7,22 @@ import SearchResult from './searchResult';
 import Header from '../../component/header';
 import Footer from '../../component/footer';
 import { OPTIONS } from './data';
+import { routeHistory } from "../../types";
 import "./style.scss";
 
 type State = {
-    additionalOptions: Object
+    additionalOptions: Object,
+    type: string,
 }
 
-class Home extends Component<{}, State> {
+type Props = {
+    history: routeHistory
+}
+
+class Home extends Component<Props, State> {
     state = {
         additionalOptions: OPTIONS,
+        type: "",
     }
 
     updateFilters = (e: any, field: string) => {
@@ -25,7 +32,8 @@ class Home extends Component<{}, State> {
     }
 
     render() {
-        const { additionalOptions } = this.state;
+        const { additionalOptions, type } = this.state;
+        const { history } = this.props;
         return (
             <Layout>
                 <Header />
@@ -36,10 +44,11 @@ class Home extends Component<{}, State> {
                     <Filters
                         updateFilters={this.updateFilters}
                         additionalOptions={additionalOptions}
+                        type={type}
                     />
                     <SearchResult />
                 </div>
-                <Footer />
+                <Footer history={history} />
             </Layout>
         );
     }

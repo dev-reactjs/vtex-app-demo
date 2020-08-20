@@ -1,0 +1,21 @@
+.home-banner {
+    width: 100%;
+    max-height: 300px;
+    img {
+        width: 100%;
+        height: -webkit-fill-available;
+        object-fit: cover;
+    }
+}
+.content {
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    .tr button {
+        display: none;
+    }
+    .TopRightGrid_ScrollWrapper .ReactVirtualized__Grid__innerScrollContainer {
+        color: darkgray;
+    }
+
+}

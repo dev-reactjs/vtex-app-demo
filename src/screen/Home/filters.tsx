@@ -8,11 +8,12 @@ import { TYPE_OPTIONS } from "./data";
 
 type Props = {
     updateFilters: Function,
-    additionalOptions: Object
+    additionalOptions: Object,
+    type: string,
 }
 
 function Filters(props: Props) {
-    const { updateFilters, additionalOptions } = props;
+    const { updateFilters, additionalOptions, type } = props;
     return (
         <div className="row">
             <Input
@@ -24,6 +25,7 @@ function Filters(props: Props) {
                 <Dropdown
                     label="Type"
                     size="regular"
+                    value={type}
                     options={TYPE_OPTIONS}
                     onChange={(e: string) => updateFilters(e, "type")}
                 />
