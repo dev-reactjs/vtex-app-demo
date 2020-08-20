@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import Solutions from "./screen/Solutions";
 import Home from "./screen/home";
 
 class App extends Component {
@@ -8,7 +8,8 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Solutions} />
         </Switch>
       </Router>
     );
