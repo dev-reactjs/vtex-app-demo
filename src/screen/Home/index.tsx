@@ -36,7 +36,11 @@ class Home extends Component<Props, State> {
         const { history } = this.props;
         return (
             <Layout>
-                <Header />
+                <Header
+                    history={history}
+                    label="Employees"
+                    route="/users"
+                />
                 <div className="home-banner">
                     <img src={explore} alt="explore" />
                 </div>

@@ -31,7 +31,11 @@ class Users extends Component<Props> {
         const { users, loading, error } = usersReducer || {};
         return (
             <Layout>
-                <Header />
+                <Header
+                    history={history}
+                    label="Home"
+                    route="/"
+                />
                 <div className="home-banner">
                     <img src={explore} alt="explore" />
                 </div>

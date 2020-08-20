@@ -1,25 +1,32 @@
 import React from "react";
 import Link from "@vtex/styleguide/lib/Link";
+import Button from "@vtex/styleguide/lib/Button";
 
-function Header() {
+import { routeHistory } from "../../types";
+
+type Props = {
+    history: routeHistory,
+    label: string,
+    route: string,
+}
+
+function Header(props: Props) {
+    const { label, route, history } = props;
     return (
         <div className="header">
             <span className="logo">ONGRAPH</span>
             <div className="head-links">
                 <Link
-                    href="/users"
-                    target="_blank"
+                    href={route}
                     mediumWeigth
                 >
-                    Employees
+                    {label}
                 </Link>
-                <Link
-                    href="/solutions"
-                    target="_blank"
-                    mediumWeigth
+                <Button
+                    onClick={() => history.push("/solutions")}
                 >
                     Solutions
-                </Link>
+                </Button>
             </div>
         </div>
     );
